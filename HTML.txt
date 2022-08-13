@@ -45,7 +45,147 @@ cador é necessário escrever dois pontos. Ex:../minha-imagem.jpg
 HTML é o código que é usado pra estrutura a página web e seu conteúdo. HTML consiste
 em uma série de elementos que você usa para encapsular diferentes partees do conteúdo 
 para fazer o mesmo aparecer ou agir de uma certa forma. As tags encapsuladoras podem 
-fazer uma palavra ou um hpyerlink de imagem para outro lugar, pode italizar palavras,
+fazer uma palavra ou um hyperlink de imagem para outro lugar, pode italizar palavras,
 pode fazer fonte maior ou menor e etc.
 
 Anatomia de um elemento HTML
+-Partes principais:
+    +Tag de abertura: Consiste no nome do elemento. Esse é o estado onde o elemento
+    começa or começa a ter efeito
+
+    +Tag de fechamento: O mesmo que a tag de abertura, exceto pelo fato de incluir 
+    uma '/' antes do nome do elemento. Esse estado é onde o elemento termina.
+
+    +O conteudo: É o conteúdo do elemento
+
+    +O elemento: A tag de abertura, a tag de fechamento e o conteúdo juntos compõe
+    o elemento
+
+Elementos também pode tem atributos, atributos contém informações extras sobre o
+elemento que você não quer que apareça no conteudo em si. O atributo "class" permite
+que você dê a um elemnto um identificador não único que pode ser usado para mirá-lo 
+com informações de estilo e entre outras coisas.
+
+Um atributo sempre deve ter o seguinte:
+    + Um espaço entre ele o nome do elemento
+    +O nome do atributo deve ser seguido por um sinal de igual
+    +O valor do atributo encapsulado por ""
+
+Elementos Nesting
+
+É possível colocar elementos dentro de outros elementos, isso é chamado de nesting.
+Se por exemplo eu quiser dar uma ênfase a algo usar o elemento <strong> no seguinte
+formato:
+
+<p> My cat is <strong>very</strong> grumpy </p>
+
+Os elementos devem abrir e fechar corretamente para que ele devam estar internamente 
+ou externamente de um ao outro, se usar de forma incorreta o site pode tentar usar o que
+ele achar correto o que pode levar a resultados inesperados, então NÃO FAZER.
+
+Elementos vazios
+
+Alguns elementos não tem conteudo e são chamados de elementos vazios, um exemplo é o
+elemento <img>(<img src = "images/firefox-icon.png" alt = "My test image">) no exemplo
+ele contém dois atributos, mas nenhuma tag de fechamento </img> nem nenhum conteudo dentro.
+Isso é porque um elementos de imagem não encapsula um conteúdo para afetá-lo. Seu propósito é
+embutir uma imagem na página HTML no lugar em que aparece.
+
+*Anatomia de um documento HTML
+
+Isso conclui o básico de elementos HTML individuais mas eles não são úteis sozinhos. na página
+de exemplo tinham os seguintes elementos:
+
+<!DOCTYPE html> -> DOCTYPE é uma introdução requirida. Atualmente não realiza muito e é necessário
+apenas para ter certeza que seu documento se comporta corretamente.
+
+<html></html> -> O elemento <html>. Esse elemento encapsula todo o conteúdo em toda a página e às vezes
+é conhecido como elemento raiz. também inclue o atributo "lang", que é usado pra definir a língua do documento
+
+<head></head> -> O elemento <head>. Esse elemento age como o container para todas as que você deseja
+incluir na página HTML que não É o conteúdo que você mostra para os leitores da página. Isso inclue coisas
+como keywords e uma descrição da página que você quer que apareça nos resultados de busca, CSS para estilizar
+o conteúdo, declaração de definição de caracteres e etc.
+
+<meta charset="utf-8"> -> Esse elemento define o conjunto de caracteres que seu documento deveria usar para
+UTF-8 o qual inclue a maioria dos caracteres da vasta maioria de linguagens escritas. Essencialmente,consegue
+lidar com qualquer conteúdo textual você deve por naquilo. Não tem nenhuma razão para não definir isso e pode 
+ajudar para evitar alguns problemas depois.
+
+<meta name="viewport" content="width=device-width"> -> Esse elemento viewport garante que a página renderiza no
+tamanho da viewport, prevenindo browsers móveis de renderizar páginas maiores que a viewport and then shrinking
+them down
+
+<title></title> -> O elemento <title>. Isso define o título da página, que é o título que aparece na janela do 
+browser que carrega o site dentro. É também usada para descrever a página quando você favorita/salva ela.
+
+<body></body> -> O elemento <body>. Isso contém todo o conteúdo que você quer mostrar para os usuários web quando
+eles visitam sua página seja texto, imagem, vídeo, jogos, áudios reproduzíveis e entre outras coisas
+
+*Imagens
+Tome como exemplo:
+
+<img src="images/firefox-icon.png" alt="My test image">
+
+Como dito antes, embute uma imagem na página na posição que aparece. Faz isso via o atributo src(source), o que
+contém o caminho para a imagem.Também foi inculuido um atributo alt(alternative). No atributo alt, você especifica
+um texto descritivo para os usuários que não conseguem ver a imagem, possivelmente por causa das seguintes razões:
+    -O usuário tem deficiência visual.
+    -Algo deu errado causando o não aparecimento da imagem.
+As palavras chave para texto alternativo são texto descritivo. O texto alternativo que você escrever deve prover 
+informações o suficiente para o leitor ter uma boa ideia do que  a imagem é.
+
+*Marcando texto
+Essa seção vai cobrir alguns dos elementos essenciais do HTML que vai ser usado para marcação de texto.
+
+Headings
+
+Elementos headings permitem você especificar que certas partes do seu conteúdo são headings ou subheadings. Do mesmo
+jeito que um livro contém o título principal, títulos de capítulo e subtítulos um documento HTML pode também. HTML
+contém 6 níveis de headings, <h1> - <h6>, apesar de comumente você usar apenas 4 no máximo
+Ex:
+-<h1>My main title</h1>
+-<h2>My top level heading</h2>
+-<h3>My subheading</h3>
+-<h4>My sub-subheading</h4>
+
+OBS: Qualquer coisa em HTML entre <!-- e --> é um comentário.
+
+Parágrafos
+
+Como foi explicado no texto acima, elementos <p> são para conter parágrafos ou textos, normalmente vai ser
+usado para marcar conteúdos de texto.
+Ex:
+
+<p>This is a single paragraph</p>
+
+Listas
+
+Marcação de listas consiste em ao menos 2 elementos. Os tipos mais comuns de lista são ordenado e as não ordenadas
+
+1.Listas não ordenadas são para listas onde a ordem dos itens não importa, como por exemplo uma lista de compras. 
+Elas são encapsuladas por um elemento <ul>.
+
+2.Listas ordenadas são para listas onde a ordem importa, como por exemplo uma receita. Elas são encapsuladas por 
+um elemento <ol>.
+
+Cada item dentro de uma lista é posto dentro de um elemento <li>(list item)
+Ex:
+<ul>
+  <li>technologists</li>
+  <li>thinkers</li>
+  <li>builders</li>
+</ul
+
+Links
+
+Links são muito importantes, para adicionar um link só é necessário usar um simples elemento <a>, "a" sendo um
+encurtamento para "anchor". Para fazer o texto do seu parágrafo ser um link é necessário:
+
+1.Escolher um texto
+2.Encapsular o texto em um elemento <a>. Ex: <a>Mozilla Manisfesto</a>
+3.Dar ao elemento <a> um atributo href. Ex: <a href="">Mozilla Manifesto</a>
+4.Preencher o valor do atributo com um endereço web que você deseja linkar.
+Ex: <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
+
+Se o https:// ou htpp:/ forem ocultados resultados inesperados vão ser recebidos entrão lembra de botar. (href = hypertext reference)
