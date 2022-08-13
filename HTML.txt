@@ -1,0 +1,51 @@
+HTML(Linguagem de Marcação de HiperTexto)
+
+Pra começar um website é necessário respoder algumas questões com:
+Meu site é sobre o que?
+Que informações vão haver nele?
+Como o site se parece?
+
+*Lidando com arquivos
+
+É melhor colocar o nome de arquivos e pastas sem espaços e no lugar de
+espaço usar hífens pois a ferramenta de busca do google trata o hífen
+cin um separador de palavras, além disso sermpre usar letras minúsculas
+para não se confundir no código
+
+-Quais estruturas um website deve ter?
+
+1.index.html -> Esse arquivo contém geralmente a página inicial, ou seja
+o texto e as imagens que as pessoas vão ver quando entrarem no site.
+
+2.Pasta de imagens(images) -> Essa pasta vai conter todas as imagens que serão 
+utilizadas no site.
+
+3.Pasta de estilos(styles) -> Essa pasta vai conter o código em CSS usado para
+estilizar o conteúdo do site.
+
+4.Pasta de scripts -> Essa pasta vai conter todos os códigos em JavaScript usa-
+do para adicionar funcionalidades interativas para o site.
+
+*Caminhos de Arquivos
+Para arquivos "conversarem" um com o outro é necessário prover um file path entre
+eles - basicamente uma rota para que um arquivo saiba onde o outro está.
+-Algumas regras gerais para file paths:
+
+1. A linkar um arquivo alvo que está no mesmo diretório que o arquivo HTML invocador
+só é necessário usar o nome do arquivo. Ex: minha-imagem.jpg
+
+2.Para referenciar um arquivo em um subdiretório, é necessário escrever o nome do 
+diretório no começo do path e adicionar uma barra. Ex: subdiretório/minha-imagem.jpg
+
+3.Para linkar um arquivo alvo em um diretório acima do diretório do arquivo HTML invo-
+cador é necessário escrever dois pontos. Ex:../minha-imagem.jpg
+
+*Básico de HTML
+
+HTML é o código que é usado pra estrutura a página web e seu conteúdo. HTML consiste
+em uma série de elementos que você usa para encapsular diferentes partees do conteúdo 
+para fazer o mesmo aparecer ou agir de uma certa forma. As tags encapsuladoras podem 
+fazer uma palavra ou um hpyerlink de imagem para outro lugar, pode italizar palavras,
+pode fazer fonte maior ou menor e etc.
+
+Anatomia de um elemento HTML
