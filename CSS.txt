@@ -1,0 +1,75 @@
+*Básico de CSS
+
+CSS(Cascanding Style Sheets) é o código que estiliza conteúdo web. CSS é uma style sheet language
+Para o código de CSS funcionar no HTML você precisa:
+
+1. Copiar o seguinte código entre as tags de head:
+<link href="styles/nomedoarquivo.css" rel="stylesheet">
+
+2. Salvar o arquivo.html e carregar ele no navegador.
+
+*Anatomia do ruleset CSS
+
+A estrutura completa é chamada de ruleset
+
+p(seletor) {
+  color(propriedade): red(valor de propriedade);
+}(declaração)
+
+Seletor -> Esse é o nome do elemento HTML no começo do ruleset. Define o(s) elemento(s) que vão ser 
+estilizados. Para estilizar um elemento diferente, mude o seletor.
+
+Declaração -> É uma regra única como "color:red". Especifica qual propriedade de elemento você quer
+estilizar
+
+Propriedades -> Esses são os caminhos nos quais você pode estilizar um elemento HTML. Em CSS, você 
+escolhe quais Propriedades você quer afetar com a regra.
+
+Valor de propriedade -> A direita da propriedade(depois do ":") tem o valor de propriedade. Isso
+escolhe uma entre muitas possibilidades de aparências para uma dada propriedade.
+
+Observações:
+
+-Fora o seletor, cada ruleset deve estar encapsulado em "{}"
+-Em cada declaração, você deve usar uma ":" para separar cada propriedade do seu valor ou valores
+-Em cada ruleset, você deve usar ";" para separar cada declaração da próxima.
+
+Para modificar múltiplos valorees de propriedade em um rulesete, escreva eles separados por ";", como
+no exemplo:
+
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+
+*Selecionando múltiplos elementos
+
+Também é possível selecionar múltiplos elementos e aplicar um único ruleset para todos eles. Separe os
+múltiplos seletores com ",". 
+Ex:
+
+p, li, h1 {
+  color: red;
+}
+
+*Diferentes tipos de seletor
+
+Existem diferentes tipos de seletores. Os exemplos usados acima usam seletores de elemento, que podem sele-
+cionar todos os elementos de um tipo. Mas podemos fazer seleções mais específicas. Por exemplo:
+
+Seletor Elemento -> Seleciona todos os elementos HTML de um tipo específico. Ex: p
+
+Seletor ID -> Seleciona o elemento na página com o ID especificado. Em uma determinada página HTML cada valor
+de ID deve ser único. Ex: #my-id(seleciona -> <p id="my-id"> or <a id="my-id"> )
+
+Seletor de classe -> Seleciona os elementos na página com uma classe especificada. Múltiplas instâncias com a 
+mesma classse podem aparecer na página. Ex: .my-class(seleciona <p class="my-class"> and <a class="my-class"> )
+
+Seletor de atributo -> Seleciona os elementos na página com o atributo especificado. Ex: img[src](seleciona <img src="myimage.png"> but not <img>)
+
+Seletor de pseudo-classe -> Seleciona os elementos específicos, mas apenas nos estados especificados
+Ex: a:hover(seleciona <a> mas apenas quando o mouse está passando por cima do link.)
+
+*Textos e fontes
+
