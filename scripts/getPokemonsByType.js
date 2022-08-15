@@ -3,9 +3,10 @@ const poke_cards = document.getElementsByClassName('pokemon');
 var pokemon_number = 898;
 
 const getPokemon = async id => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const url = `https://pokeapi.co/api/v2/pokemon`;
     const res = await fetch(url)
     const pokemon = await res.json();
+    console.log(pokemon);
     createPokemonCard(pokemon);
 }
 
@@ -17,9 +18,10 @@ const getPokemonType = async url =>{
 }
 
 const fetchPokemons = async (pokemon_number) => {
-    for(let i=1; i <= pokemon_number; i++ ){
-        await getPokemon(i);
-    }
+    //for(let i=1; i <= pokemon_number; i++ ){
+    //    await getPokemon(i);
+    // }
+    getPokemon();
 }
 
 
@@ -49,7 +51,6 @@ const getAllTypes = () => {
         .then(res=> res.json())
            .then(pokemonType => {
                 pokemonType.results.forEach(function(typeOfPokemon){
-                    console.log(pokemonType)
                     addButton(typeOfPokemon);
     })
     })
@@ -59,9 +60,9 @@ const addButton = (pokemonType) => {
 
     let select = document.getElementById("botao");
     let button = document.createElement("button");
-        if(pokemonType.name !== "unknown" & pokemonType.name !== "shadow"){
-        button.innerHTML = `${pokemonType.name}`;
-        select.append(button);
+        if(pokemonType.name !== "unknown" && pokemonType.name !== "shadow"){
+            button.innerHTML = `${pokemonType.name}`;
+            select.append(button);
         }
         button.onclick = function() {
             counter = 0
