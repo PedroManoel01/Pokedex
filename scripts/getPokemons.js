@@ -20,10 +20,6 @@ const createPokemonCard = (pokemon) => {
     pokemonEl.classList.add('pokemon');
     const { id, name, sprites, types } = pokemon;
     const type = types[0].type.name;
-    const type1 = async() =>{
-        if(types[1].type.name !== null)
-            type1 = types[1].type.name
-    }
     const pokeInnerHTML = `
     <div class="img-container">
         <img src="${sprites.front_default}" alt="${name}"/>
