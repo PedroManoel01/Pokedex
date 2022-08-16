@@ -10,15 +10,18 @@ const getPokemon = async id => {
     createPokemonCard(pokemon);
 }
 
-const getPokemonId = async url =>{
+const getPokemonById = async url =>{
     const res = await fetch(url)
     const pokemon = await res.json();
+    createPokemonCard(pokemon)
 }
 const getPokemonGen = async url =>{
     const res = await fetch(url)
     const pokemon = await res.json();
-    console.log(pokemon);
-    createPokemonCard(pokemon)
+    const url_id = `https://pokeapi.co/api/v2/pokemon/${pokemon.id}`;
+
+    getPokemonById(url_id)
+    
 }
 
 const fetchPokemons = async (pokemon_number) => {
@@ -74,7 +77,7 @@ const addButton = (pokemonGen) => {
         fetch(genURL)
             .then(res => res.json())
                .then(pokemonGen => {            
-                for(let i = pokemonGen.pokemon_species.length - 1; i >= 0; i--){
+                for(let i = 0; i <= pokemonGen.pokemon_species.length - 1; i++){
                     getPokemonGen(pokemonGen.pokemon_species[i].url);
 
         }})
