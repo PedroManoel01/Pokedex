@@ -3,7 +3,7 @@ const poke_cards = document.getElementsByClassName('pokemon');
 var pokemon_number = 898;
 
 const getPokemon = async id => {
-    const url = `https://pokeapi.co/api/v2/pokemon${id}`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url)
     const pokemon = await res.json();
     console.log(pokemon);

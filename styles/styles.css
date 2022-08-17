@@ -92,6 +92,10 @@
     padding: 20px;
     text-align: center;
   }
+  .pokemon:hover {
+    cursor: pointer;
+  }
+
 
   @media screen and (max-width: 960px){
     .navbar__container{
