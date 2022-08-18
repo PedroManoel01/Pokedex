@@ -2,20 +2,16 @@ const poke_container = document.getElementById('poke_container');
 const poke_cards = document.getElementsByClassName('pokemon');
 var pokemon_number = 898;
 
+
+
 const getPokemon = async id => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url)
     const pokemon = await res.json();
-    console.log(pokemon);
     createPokemonCard(pokemon);
 }
 
-const getPokemonType = async url =>{
-    console.log(url);
-    const res = await fetch(url)
-    const pokemon = await res.json();
-    createPokemonCard(pokemon)
-}
+
 
 const fetchPokemons = async (pokemon_number) => {
     for(let i=1; i <= pokemon_number; i++ ){
@@ -32,7 +28,7 @@ const createPokemonCard = (pokemon) => {
     const type = types[0].type.name;
     if(id <= 898){
     const pokeInnerHTML = `
-    <div class="img-container">
+    <div id = 'modal' class="img-container">
         <img src="${sprites.front_default}" alt="${name}"/>
     </div>
     <div class="info">
@@ -43,6 +39,7 @@ const createPokemonCard = (pokemon) => {
     `;
     pokemonEl.innerHTML = pokeInnerHTML;
     poke_container.appendChild(pokemonEl);
+    
 }}
 
 const getAllTypes = () => {
@@ -64,7 +61,7 @@ const addButton = (pokemonType) => {
             select.append(button);
         }
         button.onclick = function() {
-            counter = 0
+            counter = 0;
             for(let i = poke_cards.length - 1; i >= 0; i--){
                 poke_cards[i].remove();
             }
@@ -84,6 +81,11 @@ const getPokemonByType = (typeURL,counter) => {
     .catch((error) => {
     console.error("Error:", error);
     });
+    }
+const getPokemonType = async url =>{
+    const res = await fetch(url)
+    const pokemon = await res.json();
+    createPokemonCard(pokemon)
     }
 
 
